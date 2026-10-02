@@ -1,0 +1,26 @@
+Return-Path: <bounce+a1b2@mail.listserv.org>
+Received: from out.mail.listserv.org (out.mail.listserv.org [203.0.113.80])
+	by mx.recipient-mail.com (Postfix) with ESMTPS id 5Lst22
+	for <reader@recipient-mail.com>; Tue, 30 Sep 2026 11:05:40 -0400 (EDT)
+Received: from app.listserv.org (app.listserv.org [203.0.113.70])
+	by out.mail.listserv.org (Postfix) with ESMTPS id 3Lst10;
+	Tue, 30 Sep 2026 11:05:37 -0400
+Authentication-Results: mx.recipient-mail.com;
+	spf=pass (sender IP is 203.0.113.80) smtp.mailfrom=mail.listserv.org;
+	dkim=pass header.d=listserv.org header.s=k1;
+	dmarc=pass header.from=mail.listserv.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=listserv.org;
+	s=k1; h=from:to:subject:date:list-id; bh=ListBodyHashExampleOnly=;
+	b=U2lnRXhhbXBsZUZvckRlbW9Pbmx5Tm90UmVhbA=
+List-Id: Dev Discussion <dev.listserv.org>
+From: Jordan Lee via Dev List <dev-list@mail.listserv.org>
+Reply-To: Jordan Lee <jordan@contributor-corp.com>
+To: dev-list@mail.listserv.org
+Subject: Re: proposal for the Q4 roadmap
+Date: Tue, 30 Sep 2026 11:05:35 -0400
+Message-ID: <list.77219.a1b2@mail.listserv.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+This is a synthetic sample message used by Herald to demonstrate how a
+legitimate mailing list reshapes the sender headers.

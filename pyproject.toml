@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "herald-headers"
+version = "1.0.0"
+description = "Read the headers — an offline e-mail header forensics and spoofing educator."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "at0m-b0mb" }]
+keywords = ["email", "headers", "phishing", "spoofing", "spf", "dkim", "dmarc", "security", "forensics"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Communications :: Email",
+    "Topic :: Security",
+]
+dependencies = ["PyQt6>=6.5"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.urls]
+Homepage = "https://github.com/at0m-b0mb/Herald"
+Source = "https://github.com/at0m-b0mb/Herald"
+
+[project.scripts]
+herald = "herald.cli:main"
+
+[project.gui-scripts]
+herald-gui = "herald.app:main"
+
+[tool.setuptools]
+packages = ["herald", "herald.core", "herald.ui"]

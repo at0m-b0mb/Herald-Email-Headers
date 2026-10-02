@@ -1,0 +1,27 @@
+Return-Path: <bounce@shop-updates.com>
+Received: from mail.shop-updates.com (mail.shop-updates.com [198.51.100.24])
+	by mx.recipient-mail.com (Postfix) with ESMTPS id 4Xy2k9
+	for <reader@recipient-mail.com>; Tue, 30 Sep 2026 14:22:10 -0400 (EDT)
+Received: from relay.shop-updates.com (relay.shop-updates.com [198.51.100.10])
+	by mail.shop-updates.com (Postfix) with ESMTPS id 1Ab3c2;
+	Tue, 30 Sep 2026 14:22:06 -0400
+Received: from app1.internal (app1.internal [10.0.3.14])
+	by relay.shop-updates.com (Postfix) with ESMTP id 9Zz0q1;
+	Tue, 30 Sep 2026 14:22:05 -0400
+Authentication-Results: mx.recipient-mail.com;
+	spf=pass (sender IP is 198.51.100.24) smtp.mailfrom=shop-updates.com;
+	dkim=pass header.d=shop-updates.com header.s=s1;
+	dmarc=pass (p=reject sp=reject) header.from=shop-updates.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=shop-updates.com;
+	s=s1; h=from:to:subject:date; bh=2jU4xS9nExampleBodyHash=;
+	b=QkFTRTY0U2lnbmF0dXJlRXhhbXBsZU9ubHlOb3RSZWFs=
+From: Shop Updates <news@shop-updates.com>
+To: reader@recipient-mail.com
+Subject: Your weekly digest is ready
+Date: Tue, 30 Sep 2026 14:22:04 -0400
+Message-ID: <20260930182204.4Xy2k9@shop-updates.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+This is a synthetic sample message used by Herald to demonstrate a
+well-authenticated newsletter. Nothing here is real mail.

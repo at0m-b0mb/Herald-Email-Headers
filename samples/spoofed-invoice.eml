@@ -1,0 +1,19 @@
+Return-Path: <noreply@mailer-bounce.ru>
+Received: from unknown (static-45-66-77-88.badhost.example [45.66.77.88])
+	by mx.recipient-mail.com (Postfix) with ESMTP id 7Bad11
+	for <reader@recipient-mail.com>; Tue, 30 Sep 2026 03:11:44 -0400 (EDT)
+Authentication-Results: mx.recipient-mail.com;
+	spf=fail (sender IP is 45.66.77.88) smtp.mailfrom=mailer-bounce.ru;
+	dkim=none;
+	dmarc=fail (p=none) header.from=paypa1-billing.com
+From: "PayPal Billing <service@paypal.com>" <service@paypa1-billing.com>
+Reply-To: Collections <collections@pay-support.top>
+To: reader@recipient-mail.com
+Subject: Invoice #4471 is overdue - act now
+Date: Mon, 22 Sep 2026 09:00:00 +0000
+Message-ID: <8841.overdue@mailer-bounce.ru>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="utf-8"
+
+This is a synthetic sample message used by Herald to demonstrate a forged
+invoice. It is not real and no action should be taken on it.
