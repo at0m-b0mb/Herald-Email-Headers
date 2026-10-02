@@ -33,7 +33,7 @@ First release.
 ### Engineering
 - The engine (`herald.core`) is pure standard library — no third-party
   dependencies, no network, no sockets.
-- 157 tests across the `Received` parser, the authentication reader, the domain
+- 158 tests across the `Received` parser, the authentication reader, the domain
   reasoning, the full grading pipeline, and a WCAG-AA contrast suite covering
   every text/background pairing in both themes.
 - Off-screen screenshot capture and a repository-art generator whose social card

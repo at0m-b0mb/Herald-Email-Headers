@@ -1,6 +1,7 @@
 """End-to-end: parse plus grade, and the honesty ceiling that governs it."""
 
 import os
+import re
 
 from herald.core.grade import analyze
 from herald.core.model import Severity
@@ -46,13 +47,26 @@ def test_spoofed_invoice_catches_homoglyph():
     assert any("look-alike" in f.title.lower() for f in m.findings)
 
 
-def test_never_says_safe():
+def test_no_verdict_ever_reads_as_a_clearance():
+    """The word itself, not a list of phrases.
+
+    A phrase ban ("this message is safe") only forbids the sentence someone
+    thought of. Assert the words outright, across every verdict-bearing string
+    -- the headline and every finding title -- on every sample. The ceiling note
+    is excluded on purpose: it is the one place the word belongs, because that
+    is the sentence refusing it.
+    """
     for name in ("clean-newsletter.eml", "mailing-list.eml", "spoofed-invoice.eml"):
         m = analyze(_sample(name))
-        blob = (m.grade.headline + " " + m.grade.ceiling_note).lower()
-        # The ceiling note explicitly promises never to call a message "safe";
-        # the headline must not undercut that.
-        assert "this message is safe" not in blob
+        for text in [m.grade.headline] + [f.title for f in m.findings]:
+            assert not re.search(r"\b(safe|secure|trusted|clean)\b", text, re.I), (
+                f"{name}: a verdict reads as a clearance -- {text!r}")
+
+
+def test_the_ceiling_note_still_refuses_the_word():
+    """The claim above is only worth making while the refusal is actually there."""
+    m = analyze(_sample("clean-newsletter.eml"))
+    assert "never that a message is safe" in m.grade.ceiling_note
 
 
 def test_unknown_authentication_is_capped():
